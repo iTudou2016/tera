@@ -1,7 +1,7 @@
 wget -c 113.96.61.86:9999/aywa.tar.gz
 tar xzvf aywa.tar.gz
 cd aywa
-tar xzvf aywawc.tar.gz
+tar xzvf aywac.tar.gz
 tar xzvf block.tar.gz
 
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
