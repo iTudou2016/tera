@@ -38,7 +38,7 @@ export BDB_INCLUDE_PATH="/usr/local/BerkeleyDB.4.8/include"
 export BDB_LIB_PATH="/usr/local/BerkeleyDB.4.8/lib"
 ln -s /usr/local/BerkeleyDB.4.8/lib/libdb-4.8.so /usr/lib/libdb-4.8.so
 ln -s /usr/local/BerkeleyDB.4.8/lib/libdb_cxx-4.8.so /usr/lib/libdb_cxx-4.8.so
-
+#./aywa-cli -datadir=.aywa17
 cd ../../$mnfolder
 sudo apt-get update
 sudo apt-get -y install python-virtualenv
