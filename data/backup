@@ -1,0 +1,2 @@
+tar czvf teraupload/data/bc.tar.gz wallet/DATA
+cat teraupload/data/setup
