@@ -11,12 +11,12 @@ nslookup $1|grep 'Address: .*'|sed -e 's/^Address: //' -n -e '1s/.*/& '$1'/p' >>
 }
 
 read -e -p "Enter mn folder : " mnfolder
-read -e -p "Enter mn ip : " mnip
-#read -e -p "Enter mn port : " mnport
-#read -e -p "Enter mn rpcport : " mnrpcport
+read -e -p "Enter mn port : " mnport
+read -e -p "Enter mn rpcport : " mnrpcport
+read -e -p "Enter mn genkey : " mngenkey
+read -e -p "Enter mn outputs : " mnoutputs
 #read -e -p "Enter mn genkey : " mngenkey
-#read -e -p "Enter mn genkey : " mngenkey
-#read -e -p "Enter mn genkey : " mngenkey
+mnip=$(curl ifconfig.me)
 
 output 'DNS hosts update'
 sudo apt-get install -y dnsutils
