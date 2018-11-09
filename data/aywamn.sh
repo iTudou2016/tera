@@ -27,8 +27,9 @@ sudo apt-get -y install python-virtualenv
 git clone https://github.com/GetAywa/Aywa_Masternode/ && cd Aywa_Masternode/sentinel
 virtualenv ./venv #(if locale.Error: unsupported locale setting: export LC_ALL=C)
 ./venv/bin/pip install -r requirements.txt
-sudo sed -i 's/aywa_conf=.*/aywa_conf=/root/aywa/'$mnfolder'/aywa.conf' sentinel.conf
-./root/aywa/aywad -datadir=/root/aywa/$mnfolder
+sudo sed -i 's/aywa_conf=.*/aywa_conf=\/root\/aywa\/'$mnfolder'\/aywa.conf/' sentinel.conf
+cd ../../..
+./aywad -datadir=$mnfolder
 pwd
 
 echo 'crontab -e'
