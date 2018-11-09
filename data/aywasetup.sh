@@ -28,7 +28,7 @@ tar xzvf block.tar.gz
 tar xzvf dbd.tar.gz
 cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx
-make
+make -j4
 make install
 cd ../..
 #Tell your system where to find db4.8 
