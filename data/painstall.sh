@@ -11,7 +11,7 @@ nslookup $1|grep 'Address: .*'|sed -e 's/^Address: //' -n -e '1s/.*/& '$1'/p' >>
 }
 #HOSTIP='203.104.37.177'
 #HOSTIP='43.240.128.88'
-HOSTIP='10.1.169.8'
+HOSTIP='10.1.169.136'
 #HOSTIP='113.96.61.86'
 #HOSTIP='43.240.128.75'
 #HOSTIP='10.1.168.9'
