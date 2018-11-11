@@ -14,8 +14,29 @@ sudo 以独特的方式解决了这些问题。
 Debian 的 GNU/Linux 中，所有活动都记录在 /var/log/auth.log 文件中。
 
  fuser 主要用于显示文件/socket/filesystem是 正在被哪个进程使用。通过-k参数可以杀掉正在使用
-
 文件的进程
+tar -xJf node-v10.9.0-linux-x64.tar.xz
+3.设置软连接：
+
+sudo ln -s 解压路径/node-v10.9.0-linux-x64/bin/node /usr/local/bin/node
+ 
+
+sudo ln -s 解压路径/node-v10.9.0-linux-x64/bin/npm /usr/local/bin/npm
+4.安装pm2
+
+sudo npm install pm2 -g
+（安装有两个wran可以忽略）
+
+（1）提示错误，npm WARN tar ENOSPC: no space left on device, write，需要修改
+解压路径/node-v10.9.0-linux-x64/etc下的npmrc文件，把tmp = /tmp 前面的分号去掉，然后把/tmp改成有空间的路径
+
+（2）安装完成之后执行pm2 list 提示命令不存在，需要设置全局软连接，执行sudo npm install pm2 -g的过程中会提示路径，找到pm2的路径，sudo ln -s 路径/pm2 /usr/local/bin/pm2，重新执行pm2 list，解决 
+--------------------- 
+作者：打草稿不用纸 
+来源：CSDN 
+原文：https://blog.csdn.net/c864882264/article/details/82383979 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
 
 tee
 tee(选项)(参数)
