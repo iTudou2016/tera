@@ -22,6 +22,13 @@ sudo apt-get install -y ntp
 echo "server ntp.ubuntu.com" >> /etc/ntp.conf
 /etc/init.d/ntp start
 touch zz$(curl ifconfig.me)
+output 'DNS hosts update'
+sudo apt-get install -y dnsutils
+fixDNS github.com
+fixDNS github.global.ssl.fastly.net
+fixDNS assets-cdn.github.com
+fixDNS github-cloud.s3.amazonaws.com
+sudo /etc/init.d/networking force-reload
 
 output 'Nodejs/npm/pm2 setup'
 wget -c $HOSTIP:9999/node-v8.12.tar.gz
