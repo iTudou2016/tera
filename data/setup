@@ -1,5 +1,9 @@
-wget 203.104.37.177:9999/ss.sh
-wget 203.104.37.177:9999/install.sh
+#HOSTIP='203.104.37.177'
+HOSTIP='43.240.128.75'
+#HOSTIP='203.104.37.177'
+
+wget $HOSTIP:9999/ss.sh
+wget $HOSTIP:9999/install.sh
 chmod +x ss.sh install.sh
 ./ss.sh
 ./install.sh
