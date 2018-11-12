@@ -52,5 +52,8 @@ mv wallet/DATA wallet/x
 wget -c $HOSTIP:9999/bc.tar.gz
 tar xzf bc.tar.gz
 cp wallet/x/const.lst wallet/DATA/
+sed -i 's/"USE_MINING": 0,/"USE_MINING": true,/' wallet/DATA/const.lst
+sed -i 's/"POW_MAX_PERCENT": 50,/"POW_MAX_PERCENT": 100,/' wallet/DATA/const.lst
+sed -i 's/"STAT_MODE": 0,/"STAT_MODE": 0,/' wallet/DATA/const.lst
 cd wallet/Source
 pm2 start run-node.js -n tera
