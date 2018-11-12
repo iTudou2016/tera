@@ -1,3 +1,6 @@
+#更换ubuntu16.04源。 'bash ss.sh'
+#如果出错，reboot后重新运行 'sudo apt-get update'
+#完成后开始部署。 'bash tera.sh'
 touch zz$(curl ifconfig.me)
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 echo "deb http://mirrors.ucloud.cn/ubuntu/ xenial main restricted universe multiverse
