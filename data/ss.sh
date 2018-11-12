@@ -13,4 +13,4 @@ deb-src http://mirrors.ucloud.cn/ubuntu/ xenial-updates main restricted universe
 deb-src http://mirrors.ucloud.cn/ubuntu/ xenial-backports main restricted universe multiverse
 ##测试版源
 deb-src http://mirrors.ucloud.cn/ubuntu/ xenial-proposed main restricted universe multiverse" > /etc/apt/sources.list
-sudo apt-get updat
+sudo apt-get update
