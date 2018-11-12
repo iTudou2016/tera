@@ -1,3 +1,4 @@
+#备份最新blockchain
 pm2 stop tera
 sleep 3s
 tar czvf tera/data/bc.tar.gz wallet/DATA
