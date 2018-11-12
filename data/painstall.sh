@@ -57,3 +57,4 @@ sed -i 's/"POW_MAX_PERCENT": 50,/"POW_MAX_PERCENT": 100,/' wallet/DATA/const.lst
 sed -i 's/"STAT_MODE": 0,/  "NET_WORK_MODE": {\n    "ip": "'$(curl ifconfig.me)'",\n    "port": 30000,\n    "UseDirectIP": true,\n    "NodeWhiteList": "",\n    "DoRestartNode": 1\n  },\n  "STAT_MODE": 0,/' wallet/DATA/const.lst
 cd wallet/Source
 pm2 start run-node.js -n tera
+pm2 log tera
