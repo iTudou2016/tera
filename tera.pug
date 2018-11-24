@@ -5,9 +5,9 @@ html
     meta(http-equiv="refresh" content="120")
     link(href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
     link(href="//cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet")
-    link(href="/css/default.css" rel="stylesheet")  
+    link(href="/default.css" rel="stylesheet")
     style(type="text/css").
-      .hostname {color:#0066cc;font-size: 22px;line-height: 50px;}
+      .alarm {color:red; font-weight: bold;  font-size: 16px;}
       h2 {color: #0066cc;font-size: 32px;}
   body
       mixin card(title, info, ...heads)
@@ -23,21 +23,19 @@ html
               tbody
                 each item in info
                   tr
-                    each val in item
-                      td(class="col2 sort")
-                        if !isNaN(val)
-                          - var shares=Number(val).toFixed(0)
-                          span= shares
-                        else
-                          span= val
+                    td= item.rigIP
+                    - var cpuload =Number(/\d+.\d+/.exec(item.cpuload))
+                    if cpuload < 2 && cpuload >0
+                      td(class="alarm")= cpuload
+                    else
+                      td= cpuload
+                    td= ((Date.now()-item.lastSeen)/1000).toFixed(0) + "s"
       div(id="page")
-        h1  Rig CPU Load List
-        +card("Active Accounts", cpuloadAll, "Rig IP", "CPU Load", "LastSeen")
-
-    footer
+        p Rig Total: #{rigInfo.length}
+        +card("Rig CPU Load List", rigInfo, "Rig IP", "CPU Load", "LastSeen")
+        p Rig Total: #{rigInfo.length}
+  footer
       div(class="text-muted")
-         span Powered by 
+         span 出品:     
              a(target="_blank" href="http://www.cnpool.vip")
-                i(class="fa fa-snowflake-o")
-                span  www.cnpool.vip 泥巴池 
-                i(class="fa fa-snowflake-o")
+                span  空气池
