@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta(charset='utf-8' name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1")
+    meta(http-equiv="refresh" content="900")
+    link(href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+    link(href="//cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet")
+    link(href="/default.css" rel="stylesheet")
+    title!=title
+    style(type="text/css").
+      h1 {color:red; font-size:24px}
+      p1 {color:#014e71; font-size:14px}
+      p {color:blue}
+      #home {margin: 20px 0px}
+  body
+    center
+        h1 ANN 更新
+        p1 打赏LTC：3AsbRSnA9UGDtHAHQbyXo9D6Wwgx89q1Uw
+    div(id="home")
+      p #POW ANN (Total: #{message[0].length})
+      ul
+        for item in message[0]
+            li
+               a(target= "_blank" href=item.ann_href)       #{item.ann_topicID}  :   #{item.ann_title}
+      p #MN ANN (Total: #{message[1].length})
+      ul
+        for item in message[1]
+            li
+               a(target= "_blank" href=item.ann_href)       #{item.ann_topicID}  :   #{item.ann_title}
+      p #POS ANN (Total:  #{message[2].length})
+      ul
+        for item in message[2]
+            li
+               a(target= "_blank" href=item.ann_href)       #{item.ann_topicID}  :   #{item.ann_title}
+  footer
+        div(class="text-muted")
+           span 出品:
+             a(href="https://www.cnpool.vip")
+                span  空气池
+           span   QQ群:686394624
