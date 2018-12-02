@@ -3,6 +3,7 @@ mv tera/data/bc.tar.gz .
 rm -r wallet/DATA
 tar xzvf bc.tar.gz
 cp wallet/x/const.lst wallet/DATA/
+echo $(curl ifconfig.me)
 sed -i 's/"USE_MINING": 0,/"USE_MINING": true,/' wallet/DATA/const.lst
 sed -i 's/"POW_MAX_PERCENT": 50,/"POW_MAX_PERCENT": 100,/' wallet/DATA/const.lst
 sleep 3s
