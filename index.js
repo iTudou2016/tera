@@ -1,7 +1,7 @@
-//Bitcointalk ANN crawler
+//Rig cpuload monitor
+//Created by xxcc
 
 var express = require('express');
-
 var app = express();
 var fs = require('fs');
 var redis = require('redis');
@@ -92,4 +92,4 @@ async function pruneRigInfo() {
     console.log(userList[k] + ": done.");                                                                                              
   }                                                                                                                                    
   console.log("pruneRigInfo completed.");                                                                                              
-}     
+}           
