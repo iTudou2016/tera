@@ -2,27 +2,15 @@ output() {
     printf "\E[0;33;40m"
     echo $1
     printf "\E[0m"
-    sleep 2s
-}
 fixDNS() {
 output 'updateDNS: '$1''
-}
-#HOSTIP='203.104.37.177'
-output() {
-    printf "\E[0;33;40m"
-    echo $1
     printf "\E[0m"
-    sleep 2s
-}
 fixDNS() {
 output 'updateDNS: '$1''
+sed -i '/'$1'/d' /etc/hosts
+nslookup $1|grep 'Address: .*'|sed -e 's/^Address: //' -n -e '1s/.*/& '$1'/p' >> /etc/hosts
 }
-#HOSTIP='203.104.37.177'
-#HOSTIP='43.240.128.88'
-#HOSTIP='10.1.170.8'
-HOSTIP='113.96.61.86'
-#HOSTIP='43.240.128.75'
-#HOSTIP='10.1.168.9'
+HOSTIP='www.91mud.com'
 
 output 'Time sync from ubuntu'
 sudo apt-get update
@@ -47,12 +35,13 @@ sudo npm install pm2 -g
 sudo ln -s /usr/local/nodejs/bin/pm2 /usr/local/bin/pm2
 
 output 'Tera/Data installation'
-wget -c $HOSTIP:9999/wallet.zip
-sudo apt-get install -y unzip
-unzip -q wallet.zip
-mv wallet-master wallet
+#wget -c $HOSTIP:9999/wallet.zip
+#sudo apt-get install -y unzip
+#unzip -q wallet.zip
+#mv wallet-master wallet
+git clone --depth=1 https://github.com/terafoundation/wallet.git
 cd wallet/Source
-sudo npm install
+sudo npm install 
 sudo node set httpport:5555 password:393131                                                                                            
 cd                                                                                                                                     
 mv wallet/DATA wallet/x                                                                                                                
