@@ -17,6 +17,11 @@ app.get('/tera/*', function(req, res) {
 //showTeraRigs(req,res);
 if (req.params[0]=="tera" || req.params[0]=="corey" || req.params[0]=="weiwu") {
 showTeraRigs(req,res);
+} else if (req.params[0]=="ip"){
+res.send(req.headers['x-forwarded-for'] ||                                                               
+      req.connection.remoteAddress ||                                                                         
+      req.socket.remoteAddress ||                                                                             
+      req.connection.socket.remoteAddress);
 } else {
 res.send("Contact Admin to create new account.");
 }
