@@ -11,7 +11,7 @@ nslookup $1|grep 'Address: .*'|sed -e 's/^Address: //' -n -e '1s/.*/& '$1'/p' >>
 }
 HOSTIP='www.91mud.com:9999'
 #MYIPEX=$(curl www.icanhazip.com)
-MYIPEX=$(curl www.91mud.com:9999/tera/ip|cut -d ":" -f 4)
+MYIPEX=$(curl www.91mud.com:9999/tera/ip)
 touch zz${MYIPEX}
 output 'Time sync from ubuntu'
 sudo apt-get update
